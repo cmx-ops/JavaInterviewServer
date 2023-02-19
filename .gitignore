@@ -7,6 +7,7 @@
 ### Node.gitignore ###
 # Logs
 logs
+.idea
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -114,3 +115,4 @@ dist
 .vscode-test
 
 ### END .gitignore -----------------------------------------
+.vercel

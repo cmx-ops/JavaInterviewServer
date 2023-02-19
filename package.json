@@ -1,17 +1,16 @@
 {
-  "name": "api-server",
+  "name": "javainterviewserver",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "node app.js"
+    "build": "node index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@vercel/node": "^2.9.6",
-    "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "koa": "^2.14.1"
   }
 }
