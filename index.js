@@ -10,6 +10,9 @@ const usersRouter=require('./routers/userRouter/userRouter.js')
 app.use(usersRouter.routes())
 app.use(usersRouter.allowedMethods())
 
+//mongodb
+const mongoose = require('./db/db')
+
 app.use(async ctx => {
     ctx.body = 'JavaInterviewServer Running!';
 });

@@ -1,5 +1,7 @@
 // /controllers/users.js
 
+const usersDao = require(`../../db/daos/usersDao`)
+
 // 虚拟数据
 const db = [{
     name: '小明',
@@ -11,29 +13,31 @@ const db = [{
     sex: '女'
 }]
 
-class UsersCtrl{
-    getUserList(ctx){
+class UsersCtrl {
+    async getUserList(ctx) {
         ctx.set('Allow', 'GET,POST') // 设置响应头Headers
-        ctx.body = db
+        let data = await usersDao.getUser()
+        ctx.body = data
     }
-    findUserById(ctx){
-        if (ctx.params.id >= db.length) {
-            ctx.throw(412, '先决条件错误，id大于数组长度')
-        }
-        ctx.body = db[ctx.params.id] // 假设id为数据索引
+
+    findUserById(ctx) {
+
     }
-    createUser(ctx){
+
+    createUser(ctx) {
         db.push(ctx.request.body)
         ctx.body = ctx.request.body
     }
-    updateUserById(ctx){
+
+    updateUserById(ctx) {
         db[ctx.params.id] = ctx.request.body
         ctx.body = ctx.request.body
     }
-    deleteUserById(ctx){
+
+    deleteUserById(ctx) {
         db.splice(ctx.params.id, 1) // 假设id为数据索引
         ctx.status = 204 // No content
     }
 }
 
-module.exports=new UsersCtrl()
+module.exports = new UsersCtrl()
