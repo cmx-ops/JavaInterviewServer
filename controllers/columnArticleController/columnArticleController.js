@@ -6,7 +6,15 @@ class ColumnArticleCtrl {
     async getArticleNames(ctx) {
         ctx.set('Allow', 'GET') // 设置响应头Headers
         let data = await columnArticleDao.getArticleNames()
-        ctx.body = data
+        var result = {}
+        console.log(data.length)
+        if (data.length > 1) {
+            for (let i = 0; i < data.length; i++) {
+                result = Object.assign(data[i],result)
+            }
+        }
+
+        ctx.body = result
     }
 }
 
