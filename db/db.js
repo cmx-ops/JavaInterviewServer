@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 mongoose.set('strictQuery', false)
 
-const url = 'mongodb+srv://1064830687:caomingxing7520@cluster0.hfyyom0.mongodb.net/test'
+const url = 'mongodb+srv://1064830687:caomingxing7520@cluster0.hfyyom0.mongodb.net/javaInterview'
 const options = {
     useNewUrlParser: true,
     useUnifiedTopology: true,

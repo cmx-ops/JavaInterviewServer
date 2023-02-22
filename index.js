@@ -7,8 +7,13 @@ app.use(bodyparser())
 
 //路由
 const usersRouter=require('./routers/userRouter/userRouter.js')
+const columnArticleRouter=require('./routers/columnArticleRouter/columnArticleRouter.js')
+
 app.use(usersRouter.routes())
 app.use(usersRouter.allowedMethods())
+
+app.use(columnArticleRouter.routes())
+app.use(columnArticleRouter.allowedMethods())
 
 //mongodb
 const mongoose = require('./db/db')

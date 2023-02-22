@@ -2,17 +2,6 @@
 
 const usersDao = require(`../../db/daos/usersDao`)
 
-// 虚拟数据
-const db = [{
-    name: '小明',
-    age: '13',
-    sex: '男'
-}, {
-    name: '小红',
-    age: '15',
-    sex: '女'
-}]
-
 class UsersCtrl {
     async getUserList(ctx) {
         ctx.set('Allow', 'GET,POST') // 设置响应头Headers

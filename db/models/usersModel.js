@@ -7,5 +7,5 @@ const usersSchema = new mongoose.Schema(
         hobby: Array // 用户名
     }
 )
-const usersModel = mongoose.model('test', usersSchema, 'user') //根据骨架创建模版
+const usersModel = mongoose.model('users', usersSchema, 'user') //根据骨架创建模版
 module.exports = usersModel
